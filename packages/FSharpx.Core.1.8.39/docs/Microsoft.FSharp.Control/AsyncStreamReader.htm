@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>AsyncStreamReader - FSharpx Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body><div id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../FSharp.Control/index.htm">FSharp.Control</a>
+      </li>
+			<li>
+          <a href="../FSharp.IO/index.htm">FSharp.IO</a>
+      </li>
+			<li>
+          <a href="../FSharpx/index.htm">FSharpx</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Collections/index.htm">FSharpx.Collections</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Collections.Mutable/index.htm">FSharpx.Collections.Mutable</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Core/index.htm">FSharpx.Core</a>
+      </li>
+			<li>
+          <a href="../FSharpx.DataStructures/index.htm">FSharpx.DataStructures</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Linq/index.htm">FSharpx.Linq</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Reflection/index.htm">FSharpx.Reflection</a>
+      </li>
+			<li>
+          <a href="../Microsoft.FSharp.Collections/index.htm">Microsoft.FSharp.Collections</a>
+      </li>
+			<li>
+          <a href="../Microsoft.FSharp.Control/index.htm" class="current">Microsoft.FSharp.Control</a>
+      </li>
+		</ul>
+	</div>
+</div><div id="types">
+  <h2 class="fixed">Types in Microsoft.FSharp.Control</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../Microsoft.FSharp.Control/AsyncResult`1.htm">AsyncResult&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/AsyncResultCell`1.htm">AsyncResultCell&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm" class="current">AsyncStreamReader</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/AsyncWorker`1.htm">AsyncWorker&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/FileExtensions.htm">FileExtensions</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/StreamReaderExtensions.htm">StreamReaderExtensions</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/Tags.htm">Tags</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/WebClientExtensions.htm">WebClientExtensions</a>
+        </li>
+				<li>
+            <a href="../Microsoft.FSharp.Control/WebRequestExtensions.htm">WebRequestExtensions</a>
+        </li>
+		</ul>
+	</div>
+</div>
+    <div class="header">
+		<p class="class"><strong>Type</strong> AsyncStreamReader</p>
+		<p><strong>Namespace</strong> Microsoft.FSharp.Control</p>
+		<p><strong>Interfaces</strong> <span title="System.IDisposable">IDisposable</span></p>
+	</div>
+    <div class="sub-header">
+			<div id="summary">Implements a TextReader-like API that asynchronously reads characters from
+a byte stream in a particular encoding. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#Close">Close</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#DiscardBufferedData">DiscardBufferedData</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#Peek">Peek</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#Read">Read</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#Read">Read</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#ReadExactly">ReadExactly</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#ReadLine">ReadLine</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#ReadToEnd">ReadToEnd</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#BaseStream">BaseStream</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#CurrentEncoding">CurrentEncoding</a></li>
+				<li><a href="../Microsoft.FSharp.Control/AsyncStreamReader.htm#EndOfStream">EndOfStream</a></li>
+			</ul>
+		
+	</div>
+	
+	
+	<h3 class="section">Public instance methods</h3>
+	
+	<div id="Close" class="method">
+		<h4><span title="System.void">void</span> <strong>Close</strong>()</h4>
+		<div class="content">
+
+
+
+      
+    </div>
+	</div>
+	<div id="DiscardBufferedData" class="method">
+		<h4><span title="System.void">void</span> <strong>DiscardBufferedData</strong>()</h4>
+		<div class="content">. DiscardBufferedData tells StreamReader to throw away its internal
+. buffer contents.  This is useful if the user needs to seek on the
+underlying stream to a known location then wants the StreamReader
+to start reading from this new point.  This method should be called
+very sparingly, if ever, since it can lead to very poor performance.
+However, it may be the only way of handling some scenarios where
+users need to re-read the contents of a StreamReader a second time. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="Peek" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<int>">FSharpAsync&lt;int&gt;</span> <strong>Peek</strong>()</h4>
+		<div class="content">returns the first element 
+
+
+
+      
+    </div>
+	</div>
+	<div id="Read" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<int>">FSharpAsync&lt;int&gt;</span> <strong>Read</strong>(<span title="System.Char[]">Char[]</span> buffer, <span title="System.int">int</span> index, <span title="System.int">int</span> count)</h4>
+		<div class="content">Creates an async that reads all the charactes that are avilable in the stream up to <c>count</c characters and puts them
+into <c>buffer</c> starting at <c>index</c>. The async returns the number of characters that are read.
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="Read" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<Char>">FSharpAsync&lt;Char&gt;</span> <strong>Read</strong>()</h4>
+		<div class="content">Creates an async that reads next character from the stream
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ReadExactly" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<int>">FSharpAsync&lt;int&gt;</span> <strong>ReadExactly</strong>(<span title="System.Char[]">Char[]</span> buffer, <span title="System.int">int</span> index, <span title="System.int">int</span> count)</h4>
+		<div class="content">Creates an async that reads exactly <c>count</c> characters from the stream unless end of stream is reached and puts them
+into <c>buffer</c> starting at <c>index</c>. The async returns the number of characters that are read (if end-of-stream is not reached
+that will be <c>count</c>
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ReadLine" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<string>">FSharpAsync&lt;string&gt;</span> <strong>ReadLine</strong>()</h4>
+		<div class="content">Creates an async that reads next line from the stream
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ReadToEnd" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<string>">FSharpAsync&lt;string&gt;</span> <strong>ReadToEnd</strong>()</h4>
+		<div class="content">Creates an async that read all characters in the stream up to the end.
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+
+
+
+      
+    </div>
+	</div>
+	
+	
+  <h3 class="section">Public properties</h3>
+
+  <div id="BaseStream" class="method">
+    <h4><span title="System.IO.Stream">Stream</span> <strong>BaseStream</strong> get; </h4>
+    <div class="content">
+      
+    </div>
+  </div>
+  <div id="CurrentEncoding" class="method">
+    <h4><span title="System.Text.Encoding">Encoding</span> <strong>CurrentEncoding</strong> get; </h4>
+    <div class="content">
+      
+    </div>
+  </div>
+  <div id="EndOfStream" class="method">
+    <h4><span title="Microsoft.FSharp.Control.FSharpAsync<bool>">FSharpAsync&lt;bool&gt;</span> <strong>EndOfStream</strong> get; </h4>
+    <div class="content">An async that produces true if the reader is at the end of stream and false otherwise
+Note that when the async is run it reflects the reader state at the time of running; multiple runs will
+yield different results. 
+      
+    </div>
+  </div>
+	<div id="footer">
+  <p>Based on v1.8.39.0 of FSharpx</p>
+  <p>Generated by <a href="http://docu.jagregory.com">docu</a></p>
+</div>
+  </body>
+</html>

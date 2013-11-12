@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>AsyncSeq - FSharpx Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body><div id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../FSharp.Control/index.htm" class="current">FSharp.Control</a>
+      </li>
+			<li>
+          <a href="../FSharp.IO/index.htm">FSharp.IO</a>
+      </li>
+			<li>
+          <a href="../FSharpx/index.htm">FSharpx</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Collections/index.htm">FSharpx.Collections</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Collections.Mutable/index.htm">FSharpx.Collections.Mutable</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Core/index.htm">FSharpx.Core</a>
+      </li>
+			<li>
+          <a href="../FSharpx.DataStructures/index.htm">FSharpx.DataStructures</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Linq/index.htm">FSharpx.Linq</a>
+      </li>
+			<li>
+          <a href="../FSharpx.Reflection/index.htm">FSharpx.Reflection</a>
+      </li>
+			<li>
+          <a href="../Microsoft.FSharp.Collections/index.htm">Microsoft.FSharp.Collections</a>
+      </li>
+			<li>
+          <a href="../Microsoft.FSharp.Control/index.htm">Microsoft.FSharp.Control</a>
+      </li>
+		</ul>
+	</div>
+</div><div id="types">
+  <h2 class="fixed">Types in FSharp.Control</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../FSharp.Control/AsyncExtensions.htm">AsyncExtensions</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/AsyncSeq.htm" class="current">AsyncSeq</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/AsyncSeqBuilder.htm">AsyncSeqBuilder</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/AsyncSeqExtensions.htm">AsyncSeqExtensions</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/AsyncSeqInner`1.htm">AsyncSeqInner&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/AutoCancelAgent`1.htm">AutoCancelAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/BatchProcessingAgent`1.htm">BatchProcessingAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/BlockingQueueAgent`1.htm">BlockingQueueAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/CircularQueueAgent`1.htm">CircularQueueAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/ConcurrentSetAgent`1.htm">ConcurrentSetAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/ISubject`2.htm">ISubject&lt;TIn, TOut&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/Observable.htm">Observable</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/ObservableExtensions.htm">ObservableExtensions</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/ObservableUpdate`1.htm">ObservableUpdate&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/ReplaySubject`1.htm">ReplaySubject&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/Seq.htm">Seq</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/SlidingWindowAgent`1.htm">SlidingWindowAgent&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/Subject`1.htm">Subject&lt;T&gt;</a>
+        </li>
+				<li>
+            <a href="../FSharp.Control/Tags.htm">Tags</a>
+        </li>
+		</ul>
+	</div>
+</div>
+    <div class="header">
+		<p class="class"><strong>Type</strong> AsyncSeq</p>
+		<p><strong>Namespace</strong> FSharp.Control</p>
+	</div>
+    <div class="sub-header">
+			<div id="summary">Module with helper functions for working with asynchronous sequences 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#append``1">append&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#cache``1">cache&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#choose``2">choose&lt;T, a&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#chooseAsync``2">chooseAsync&lt;T, R&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#collect``2">collect&lt;T, TResult&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#filter``1">filter&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#filterAsync``1">filterAsync&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#firstOrDefault``1">firstOrDefault&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#fold``2">fold&lt;TState, T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#foldAsync``2">foldAsync&lt;TState, T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#iter``1">iter&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#iterAsync``1">iterAsync&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#lastOrDefault``1">lastOrDefault&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#map``2">map&lt;T, a&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#mapAsync``2">mapAsync&lt;T, TResult&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#ofObservable``1">ofObservable&lt;a&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#ofObservableBuffered``1">ofObservableBuffered&lt;a&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#ofSeq``1">ofSeq&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#pairwise``1">pairwise&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#scan``2">scan&lt;TState, T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#scanAsync``2">scanAsync&lt;TState, T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#singleton``1">singleton&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#skip``1">skip&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#skipWhile``1">skipWhile&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#skipWhileAsync``1">skipWhileAsync&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#take``1">take&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#takeWhile``1">takeWhile&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#takeWhileAsync``1">takeWhileAsync&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#toBlockingSeq``1">toBlockingSeq&lt;T&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#toObservable``1">toObservable&lt;a&gt;</a></li>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#zip``2">zip&lt;T1, T2&gt;</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../FSharp.Control/AsyncSeq.htm#asyncSeq">asyncSeq</a></li>
+			</ul>
+		
+	</div>
+	
+	
+	
+	<h3 class="section">Public static methods</h3>
+	
+	<div id="append``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>append&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> seq1, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> seq2)</h4>
+		<div class="content">Yields all elements of the first asynchronous sequence and then
+all elements of the second asynchronous sequence. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="cache``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>cache&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Create a new asynchronous sequence that caches all elements of the
+sequence specified as the input. When accessing the resulting sequence
+multiple times, the input will still be evaluated only once 
+
+
+
+      
+    </div>
+	</div>
+	<div id="choose``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<a>>">FSharpAsync&lt;AsyncSeqInner&lt;a&gt;&gt;</span> <strong>choose&lt;T, a&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpOption<a>>">FSharpFunc&lt;T, FSharpOption&lt;a&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.chooseAsync, but the specified function is synchronous
+and processes the input element immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="chooseAsync``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<R>>">FSharpAsync&lt;AsyncSeqInner&lt;R&gt;&gt;</span> <strong>chooseAsync&lt;T, R&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<FSharpOption<R>>>">FSharpFunc&lt;T, FSharpAsync&lt;FSharpOption&lt;R&gt;&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Asynchronously iterates over the input sequence and generates 'x' for
+every input element for which the specified asynchronous function
+returned 'Some(x)'
+The specified function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="collect``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<TResult>>">FSharpAsync&lt;AsyncSeqInner&lt;TResult&gt;&gt;</span> <strong>collect&lt;T, TResult&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<AsyncSeqInner<TResult>>>">FSharpFunc&lt;T, FSharpAsync&lt;AsyncSeqInner&lt;TResult&gt;&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Creates an asynchronou sequence that iterates over the given input sequence.
+For every input element, it calls the the specified function and iterates
+over all elements generated by that asynchronous sequence.
+This is the 'bind' operation of the computation expression (exposed using
+the 'for' keyword in asyncSeq computation). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="filter``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>filter&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, bool>">FSharpFunc&lt;T, bool&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.filterAsync, but the specified predicate is synchronous
+and processes the input element immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="filterAsync``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>filterAsync&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<bool>>">FSharpFunc&lt;T, FSharpAsync&lt;bool&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Builds a new asynchronous sequence whose elements are those from the
+input sequence for which the specified function returned true.
+The specified function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="firstOrDefault``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<T>">FSharpAsync&lt;T&gt;</span> <strong>firstOrDefault&lt;T&gt;</strong>(<span title="FSharp.Control.T">T</span> def, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Asynchronously returns the first element that was generated by the
+given asynchronous sequence (or the specified default value). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="fold``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<TState>">FSharpAsync&lt;TState&gt;</span> <strong>fold&lt;TState, T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<TState, FSharpFunc<T, TState>>">FSharpFunc&lt;TState, FSharpFunc&lt;T, TState&gt;&gt;</span> f, <span title="FSharp.Control.TState">TState</span> state, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.foldAsync, but the specified function is synchronous
+and returns the result of aggregation immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="foldAsync``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<TState>">FSharpAsync&lt;TState&gt;</span> <strong>foldAsync&lt;TState, T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<TState, FSharpFunc<T, FSharpAsync<TState>>>">FSharpFunc&lt;TState, FSharpFunc&lt;T, FSharpAsync&lt;TState&gt;&gt;&gt;</span> f, <span title="FSharp.Control.TState">TState</span> state, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Aggregates the elements of the input asynchronous sequence using the
+specified 'aggregation' function. The result is an asynchronous
+workflow that returns the final result.
+The aggregation function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="iter``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<Unit>">FSharpAsync&lt;Unit&gt;</span> <strong>iter&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, Unit>">FSharpFunc&lt;T, Unit&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.iterAsync, but the specified function is synchronous
+and performs the side-effect immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="iterAsync``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<Unit>">FSharpAsync&lt;Unit&gt;</span> <strong>iterAsync&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<Unit>>">FSharpFunc&lt;T, FSharpAsync&lt;Unit&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Iterates over the input sequence and calls the specified function for
+every value (to perform some side-effect asynchronously).
+The specified function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="lastOrDefault``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<T>">FSharpAsync&lt;T&gt;</span> <strong>lastOrDefault&lt;T&gt;</strong>(<span title="FSharp.Control.T">T</span> def, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Asynchronously returns the last element that was generated by the
+given asynchronous sequence (or the specified default value). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="map``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<a>>">FSharpAsync&lt;AsyncSeqInner&lt;a&gt;&gt;</span> <strong>map&lt;T, a&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, a>">FSharpFunc&lt;T, a&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.mapAsync, but the specified function is synchronous
+and returns the result of projection immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="mapAsync``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<TResult>>">FSharpAsync&lt;AsyncSeqInner&lt;TResult&gt;&gt;</span> <strong>mapAsync&lt;T, TResult&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<TResult>>">FSharpFunc&lt;T, FSharpAsync&lt;TResult&gt;&gt;</span> f, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Builds a new asynchronous sequence whose elements are generated by
+applying the specified function to all elements of the input sequence.
+The specified function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ofObservable``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<a>>">FSharpAsync&lt;AsyncSeqInner&lt;a&gt;&gt;</span> <strong>ofObservable&lt;a&gt;</strong>(<span title="System.IObservable<a>">IObservable&lt;a&gt;</span> input)</h4>
+		<div class="content">Converts observable to an asynchronous sequence. Values that are produced
+by the observable while the asynchronous sequence is blocked are discarded
+(this function doesn't guarantee that asynchronou ssequence will return
+all values produced by the observable) 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ofObservableBuffered``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<a>>">FSharpAsync&lt;AsyncSeqInner&lt;a&gt;&gt;</span> <strong>ofObservableBuffered&lt;a&gt;</strong>(<span title="System.IObservable<a>">IObservable&lt;a&gt;</span> input)</h4>
+		<div class="content">Converts observable to an asynchronous sequence. Values that are produced
+by the observable while the asynchronous sequence is blocked are stored to
+an unbounded buffer and are returned as next elements of the async sequence. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="ofSeq``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>ofSeq&lt;T&gt;</strong>(<span title="System.Collections.Generic.IEnumerable<T>">IEnumerable&lt;T&gt;</span> input)</h4>
+		<div class="content">Creates an asynchronous sequence that lazily takes element from an
+input synchronous sequence and returns them one-by-one. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="pairwise``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<Tuple<T, T>>>">FSharpAsync&lt;AsyncSeqInner&lt;Tuple&lt;T, T&gt;&gt;&gt;</span> <strong>pairwise&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Returns an asynchronous sequence that returns pairs containing an element
+from the input sequence and its predecessor. Empty sequence is returned for
+singleton input sequence. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="scan``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<TState>>">FSharpAsync&lt;AsyncSeqInner&lt;TState&gt;&gt;</span> <strong>scan&lt;TState, T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<TState, FSharpFunc<T, TState>>">FSharpFunc&lt;TState, FSharpFunc&lt;T, TState&gt;&gt;</span> f, <span title="FSharp.Control.TState">TState</span> state, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Same as AsyncSeq.scanAsync, but the specified function is synchronous
+and returns the result of aggregation immediately. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="scanAsync``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<TState>>">FSharpAsync&lt;AsyncSeqInner&lt;TState&gt;&gt;</span> <strong>scanAsync&lt;TState, T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<TState, FSharpFunc<T, FSharpAsync<TState>>>">FSharpFunc&lt;TState, FSharpFunc&lt;T, FSharpAsync&lt;TState&gt;&gt;&gt;</span> f, <span title="FSharp.Control.TState">TState</span> state, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Aggregates the elements of the input asynchronous sequence using the
+specified 'aggregation' function. The result is an asynchronous
+sequence of intermediate aggregation result.
+The aggregation function is asynchronous (and the input sequence will
+be asked for the next element after the processing of an element completes). 
+
+
+
+      
+    </div>
+	</div>
+	<div id="singleton``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>singleton&lt;T&gt;</strong>(<span title="FSharp.Control.T">T</span> v)</h4>
+		<div class="content">Creates an asynchronous sequence that generates a single element and then ends 
+
+
+
+      
+    </div>
+	</div>
+	<div id="skip``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>skip&lt;T&gt;</strong>(<span title="System.int">int</span> count, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Skips the first N elements of an asynchronous sequence and
+then returns the rest of the sequence unmodified. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="skipWhile``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>skipWhile&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, bool>">FSharpFunc&lt;T, bool&gt;</span> p, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Skips elements from an asynchronous sequence while the specified
+predicate holds and then returns the rest of the sequence. The
+predicate is evaluated asynchronously. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="skipWhileAsync``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>skipWhileAsync&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<bool>>">FSharpFunc&lt;T, FSharpAsync&lt;bool&gt;&gt;</span> p, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Skips elements from an asynchronous sequence while the specified
+predicate holds and then returns the rest of the sequence. The
+predicate is evaluated asynchronously. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="take``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>take&lt;T&gt;</strong>(<span title="System.int">int</span> count, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Returns the first N elements of an asynchronous sequence 
+
+
+
+      
+    </div>
+	</div>
+	<div id="takeWhile``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>takeWhile&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, bool>">FSharpFunc&lt;T, bool&gt;</span> p, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Returns elements from an asynchronous sequence while the specified
+predicate holds. The predicate is evaluated synchronously. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="takeWhileAsync``1" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> <strong>takeWhileAsync&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Core.FSharpFunc<T, FSharpAsync<bool>>">FSharpFunc&lt;T, FSharpAsync&lt;bool&gt;&gt;</span> p, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Returns elements from an asynchronous sequence while the specified
+predicate holds. The predicate is evaluated asynchronously. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="toBlockingSeq``1" class="method">
+		<h4><span title="System.Collections.Generic.IEnumerable<T>">IEnumerable&lt;T&gt;</span> <strong>toBlockingSeq&lt;T&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T>>">FSharpAsync&lt;AsyncSeqInner&lt;T&gt;&gt;</span> input)</h4>
+		<div class="content">Converts asynchronous sequence to a synchronous blocking sequence.
+The elements of the asynchronous sequence are consumed lazily. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="toObservable``1" class="method">
+		<h4><span title="System.IObservable<a>">IObservable&lt;a&gt;</span> <strong>toObservable&lt;a&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<a>>">FSharpAsync&lt;AsyncSeqInner&lt;a&gt;&gt;</span> aseq)</h4>
+		<div class="content">Converts asynchronous sequence to an IObservable<_>. When the client subscribes
+to the observable, a new copy of asynchronous sequence is started and is
+sequentially iterated over (at the maximal possible speed). Disposing of the
+observer cancels the iteration over asynchronous sequence. 
+
+
+
+      
+    </div>
+	</div>
+	<div id="zip``2" class="method">
+		<h4><span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<Tuple<T1, T2>>>">FSharpAsync&lt;AsyncSeqInner&lt;Tuple&lt;T1, T2&gt;&gt;&gt;</span> <strong>zip&lt;T1, T2&gt;</strong>(<span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T1>>">FSharpAsync&lt;AsyncSeqInner&lt;T1&gt;&gt;</span> input1, <span title="Microsoft.FSharp.Control.FSharpAsync<AsyncSeqInner<T2>>">FSharpAsync&lt;AsyncSeqInner&lt;T2&gt;&gt;</span> input2)</h4>
+		<div class="content">Combines two asynchronous sequences into a sequence of pairs.
+The values from sequences are retrieved in parallel. 
+
+
+
+      
+    </div>
+	</div>
+	
+  <h3 class="section">Public properties</h3>
+
+  <div id="asyncSeq" class="method">
+    <h4><a href="../FSharp.Control/AsyncSeqBuilder.htm">AsyncSeqBuilder</a> <strong>asyncSeq</strong> get; </h4>
+    <div class="content">Builds an asynchronou sequence using the computation builder syntax 
+      
+    </div>
+  </div>
+	<div id="footer">
+  <p>Based on v1.8.39.0 of FSharpx</p>
+  <p>Generated by <a href="http://docu.jagregory.com">docu</a></p>
+</div>
+  </body>
+</html>

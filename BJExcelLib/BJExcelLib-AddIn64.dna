@@ -1,0 +1,12 @@
+﻿<DnaLibrary Name="BJ Excel Add-In" RuntimeVersion="v4.0">
+  
+  <ExternalLibrary Path="BJExcelLib.dll" LoadFromBytes="true" Pack="true" ExplicitExports="true"/>
+  
+  <Reference Path="FSharp.Core.dll" Pack="true" />
+  <Reference Path="FSharpx.Core.dll" Pack="true" />
+  <Reference Path="MathNet.Numerics.dll" Pack="true" />
+  <Reference Path="MathNet.Numerics.FSharp.dll" Pack="true" />
+  <Reference Path="MathNet.Numerics.IO.dll" Pack="true" />
+  <Reference Path="alglibnet2.dll" Pack="true"/>
+</DnaLibrary>
+

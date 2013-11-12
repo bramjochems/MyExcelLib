@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UDFs", "UDFs", "{C34891EC-85D9-4CCE-880D-9F81F84677C3}"
+	ProjectSection(SolutionItems) = preProject
+		BJExcelLib\UDF.American.fs = BJExcelLib\UDF.American.fs
+		BJExcelLib\UDF.Blackscholes.fs = BJExcelLib\UDF.Blackscholes.fs
+		BJExcelLib\UDF.Date.fs = BJExcelLib\UDF.Date.fs
+		BJExcelLib\UDF.Interpolation.fs = BJExcelLib\UDF.Interpolation.fs
+		BJExcelLib\UDF.Misc.fs = BJExcelLib\UDF.Misc.fs
+		BJExcelLib\UDF.Volatility.fs = BJExcelLib\UDF.Volatility.fs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Finance", "Finance", "{733C851A-70E4-44BF-96D5-F361562FA094}"
+	ProjectSection(SolutionItems) = preProject
+		BJExcelLib\Finance.Blackscholes.fs = BJExcelLib\Finance.Blackscholes.fs
+		BJExcelLib\Finance.Date.fs = BJExcelLib\Finance.Date.fs
+		BJExcelLib\Finance.JuZhong.fs = BJExcelLib\Finance.JuZhong.fs
+		BJExcelLib\Finance.SVI.fs = BJExcelLib\Finance.SVI.fs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Math", "Math", "{99FB6D68-12D5-41DC-9272-7BC467A21501}"
+	ProjectSection(SolutionItems) = preProject
+		BJExcelLib\Math.Interpolation.fs = BJExcelLib\Math.Interpolation.fs
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BJExcelLib", "BJExcelLib\BJExcelLib.fsproj", "{CCCFFCBC-7434-4262-A7C1-730F94362E7F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BJExcelLibTests", "BJExcelLibTests\BJExcelLibTests.fsproj", "{1F3EDE6E-7D84-45BD-9B0C-00198760A714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCCFFCBC-7434-4262-A7C1-730F94362E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCFFCBC-7434-4262-A7C1-730F94362E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCFFCBC-7434-4262-A7C1-730F94362E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCFFCBC-7434-4262-A7C1-730F94362E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3EDE6E-7D84-45BD-9B0C-00198760A714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3EDE6E-7D84-45BD-9B0C-00198760A714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3EDE6E-7D84-45BD-9B0C-00198760A714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3EDE6E-7D84-45BD-9B0C-00198760A714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
