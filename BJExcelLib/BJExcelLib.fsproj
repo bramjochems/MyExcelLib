@@ -70,6 +70,7 @@
     <Compile Include="Finance.YieldCurve.fs" />
     <Compile Include="Finance.YieldCurveLinearDiscount.fs" />
     <Compile Include="Finance.YieldCurveSpotGeneral.fs" />
+    <Compile Include="Finance.YieldCurveDFGeneral.fs" />
     <Compile Include="Finance.YieldCurveExtensions.fs" />
     <Compile Include="UDF.Date.fs" />
     <Compile Include="UDF.Interpolation.fs" />

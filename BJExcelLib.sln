@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UDFs", "UDFs", "{C34891EC-85D9-4CCE-880D-9F81F84677C3}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,7 +34,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YieldCurves", "YieldCurves"
 	ProjectSection(SolutionItems) = preProject
 		BJExcelLib\Finance.IYieldCurve.fs = BJExcelLib\Finance.IYieldCurve.fs
 		BJExcelLib\Finance.YieldCurve.fs = BJExcelLib\Finance.YieldCurve.fs
+		BJExcelLib\Finance.YieldCurveDFGeneral.fs = BJExcelLib\Finance.YieldCurveDFGeneral.fs
+		BJExcelLib\Finance.YieldCurveLinearDiscount.fs = BJExcelLib\Finance.YieldCurveLinearDiscount.fs
 		BJExcelLib\Finance.YieldCurvePoint.fs = BJExcelLib\Finance.YieldCurvePoint.fs
+		BJExcelLib\Finance.YieldCurveSpotGeneral.fs = BJExcelLib\Finance.YieldCurveSpotGeneral.fs
 	EndProjectSection
 EndProject
 Global
