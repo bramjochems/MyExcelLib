@@ -1,10 +1,10 @@
 ﻿namespace BJExcelLib.Math
 
+open BJExcelLib.Util.Extensions
+
 /// Contains functions for general interpolation and curve fitting.
 module Interpolation =
     open MathNet.Numerics.Fit
-
-
 
     /// Helper function that peforms some typical preprocessing needed for a lot of interpolation functions
     let private processTupleArray xydata =
@@ -22,7 +22,7 @@ module Interpolation =
             //xdata,ydata go into the closure. As a result, they are evaluated only once,but for big arrays
             // this might lead to a lot of memory consumption? Probably not an issue for my intended usage.                          
             Some( fun x -> let ix = xdata   |> Array.tryFindIndex (fun el -> el > x)
-                                            |> FSharpx.Option.getOrElse (Array.length xdata)
+                                            |> Option.getOrElse (Array.length xdata)
                                             |> max -1
                            ydata.[ix+1])
 
@@ -33,7 +33,7 @@ module Interpolation =
             let xdata, ydata = processTupleArray xydata
             Some (fun x ->  let ix = xdata  |> Array.tryFindIndex(fun el -> el > x)
                                             |> Option.map (fun z-> (z-1,z))
-                                            |> FSharpx.Option.getOrElse (-2 + Array.length xdata, -1 + Array.length xdata)
+                                            |> Option.getOrElse (-2 + Array.length xdata, -1 + Array.length xdata)
                                             |> fun (u,v) -> if u = -1 then (0,1) else (u,v)
                             let x1,x2, y1, y2 = xdata.[fst ix], xdata.[snd ix], ydata.[fst ix], ydata.[snd ix]
                             y1 + (y2-y1)/(x2-x1)*(x-x1))
@@ -45,7 +45,7 @@ module Interpolation =
             let xdata, ydata = processTupleArray xydata
             Some (fun x ->  let ix = xdata  |> Array.tryFindIndex(fun el -> el > x)
                                             |> Option.map (fun z-> (z-1,z))
-                                            |> FSharpx.Option.getOrElse (-2 + Array.length xdata, -1 + Array.length xdata)
+                                            |> Option.getOrElse (-2 + Array.length xdata, -1 + Array.length xdata)
                                             |> fun (u,v) -> if u = -1 then (0,1) else (u,v)
                             let x1,x2, y1, y2 = xdata.[fst ix], xdata.[snd ix], ydata.[fst ix], ydata.[snd ix]
                             y1*((y2/y1)**((x-x1)/(x2-x1))))

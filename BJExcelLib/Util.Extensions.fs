@@ -30,6 +30,13 @@ module public Extensions =
             let ok, res = System.DateTime.TryParse(s)
             if ok then Some(res) else None
  
+
+    module public Option =
+
+        let getOrElse dflt = function
+        | Some x -> x
+        | _ -> dflt
+
     /// Extensions to the Array module
     module public Array =
         /// Returns the number of elements int he array that satisfy the condition defined by f

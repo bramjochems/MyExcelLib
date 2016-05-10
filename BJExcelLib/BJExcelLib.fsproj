@@ -68,9 +68,11 @@
     <Compile Include="Finance.YieldCurvePoint.fs" />
     <Compile Include="Finance.IYieldCurve.fs" />
     <Compile Include="Finance.YieldCurve.fs" />
+    <Compile Include="Finance.YieldCurveLinearDiscount.fs" />
     <Compile Include="Finance.YieldCurveExtensions.fs" />
     <Compile Include="UDF.Date.fs" />
     <Compile Include="UDF.Interpolation.fs" />
+    <Compile Include="UDF.YieldCurve.fs" />
     <Compile Include="UDF.Volatility.fs" />
     <Compile Include="UDF.Blackscholes.fs" />
     <Compile Include="UDF.American.fs" />
@@ -83,20 +85,18 @@
     <Content Include="BJExcelLib-AddIn64.dna">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="alglibnet2">
-      <HintPath>C:\Programming\alglib 3.8.0\alglibnet2.dll</HintPath>
+      <HintPath>..\packages\alglibnet2.0.0.0\lib\alglibnet2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ExcelDna.Integration">
-      <HintPath>..\packages\Excel-DNA.0.30.3\lib\ExcelDna.Integration.dll</HintPath>
+      <HintPath>..\packages\ExcelDna.Integration.0.33.9\lib\ExcelDna.Integration.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FSharpx.Core">
-      <HintPath>..\packages\FSharpx.Core.1.8.39\lib\40\FSharpx.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MathNet.Numerics">
@@ -117,10 +117,12 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>echo F | xcopy "D:\Programmeren\BJExcelLib\packages\Excel-DNA.0.30.3\tools\ExcelDna.xll" "$(TargetDir)BJExcelLib-AddIn.xll" /C /Y
-echo F | xcopy "D:\Programmeren\BJExcelLib\packages\Excel-DNA.0.30.3\tools\ExcelDna64.xll" "$(TargetDir)BJExcelLib-AddIn64.xll" /C /Y
-"D:\Programmeren\BJExcelLib\packages\Excel-DNA.0.30.3\tools\ExcelDnaPack.exe" "$(TargetDir)BJExcelLib-AddIn.dna" /Y
-"D:\Programmeren\BJExcelLib\packages\Excel-DNA.0.30.3\tools\ExcelDnaPack.exe" "$(TargetDir)BJExcelLib-AddIn64.dna" /Y</PostBuildEvent>
+    <PostBuildEvent>echo F | xcopy "D:\Projects\GitHub\MyExcelLib\BJExcelLib\packages\Excel-DNA.0.30.3\tools\ExcelDna64.xll" "$(TargetDir)BJExcelLib-AddIn64.xll" /C /Y
+xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDna.xll" "$(TargetDir)BJExcelLib-AddIn.xll*" /C /Y
+xcopy "$(TargetDir)BJExcelLib-AddIn.dna*" "$(TargetDir)BJExcelLib-AddIn64.dna*" /C /Y
+xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDna64.xll" "$(TargetDir)BJExcelLib-AddIn64.xll*" /C /Y
+"$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDnaPack.exe" "$(TargetDir)BJExcelLib-AddIn.dna" /Y
+"$(SolutionDir)\packages\ExcelDna.AddIn.0.33.9\tools\ExcelDnaPack.exe" "$(TargetDir)BJExcelLib-AddIn64.dna" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,14 +5,15 @@ module public Blackscholes=
     open ExcelDna.Integration
     open BJExcelLib.ExcelDna.IO
     open BJExcelLib.Finance
+    open BJExcelLib.Util.Extensions
 
     /// Validates black-scholes input parameters
     let private validateBS S K v r b T flag marg =
         let S = S |> validateFloat |> Option.bind (fun x -> if x < 0. then None else Some(x))
         let K = K |> validateFloat |> Option.bind (fun x -> if x < 0. then None else Some(x))
         let v = v |> validateFloat |> Option.bind (fun x -> if x <= 0. then None else Some(x))
-        let r = r |> validateFloat |> FSharpx.Option.getOrElse 0.
-        let b = b |> validateFloat |> FSharpx.Option.getOrElse r
+        let r = r |> validateFloat |> Option.getOrElse 0.
+        let b = b |> validateFloat |> Option.getOrElse r
         let T = T |> validateFloat |> Option.bind (fun x -> if x <= 0. then None else Some(x))
         let flag = flag |> validateString
                         |> Option.bind (fun (x : string)-> let z = (x.ToUpper())
@@ -20,8 +21,8 @@ module public Blackscholes=
                                                            else
                                                                 let z = z.[0]
                                                                 if z = 'C' then Some(Call) elif z = 'P' then Some(Put) else None )
-                        |> FSharpx.Option.getOrElse (if S <= K then Call else Put)
-        let marg = marg |> validateBool |> FSharpx.Option.getOrElse false
+                        |> Option.getOrElse (if S <= K then Call else Put)
+        let marg = marg |> validateBool |> Option.getOrElse false
         if S.IsSome && K.IsSome && T.IsSome && v.IsSome then Some(S.Value,K.Value,v.Value,r,b,T.Value,flag,marg) else None
 
     //  Generalized BS UDFs
@@ -175,7 +176,7 @@ module public Blackscholes=
         validateBS S K v r b T flag marg
             |> Option.bind (fun (S,K,v,r,b,T,flag,marg) -> Blackscholes.valuedeltavega marg flag S K T r b v)
             |> Option.map (fun (v,d,vega)-> [|v;d;vega|])
-            |> FSharpx.Option.getOrElse Array.empty
+            |> Option.getOrElse Array.empty
             |> arrayToExcelRow
 
     [<ExcelFunction(Name="BS.ImpliedVol",Description="Implied volatility of an european option in the Black-Scholes model for a given premium. Works ok except for deep OTM options with low vol",Category="BJExcelLib.OptionPricing",IsExceptionSafe=true,IsThreadSafe=true)>]

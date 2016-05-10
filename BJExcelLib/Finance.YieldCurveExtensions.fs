@@ -9,7 +9,7 @@ module YieldCurveExtensions =
 
         /// Returns a discount factor for a date rater than a time to maturity
         member __.Discount(date:DateTime) =
-            __.Discount(__.Daycounter(date))
+            __.DiscountFactor(__.Daycounter(date))
 
         /// Returns a yield for a date rather than a time to maturity
         member __.Yield(date:DateTime) =
@@ -18,7 +18,7 @@ module YieldCurveExtensions =
         /// Returns a discount factor for a time to maturity for a yieldcurve where a spread gets applied to the curve
         member __.Discount(ttm,spread) =
             match __.CompoundingFrequency with
-            | Continuous -> __.Discount(ttm)* (YieldCurveHelper.YieldToDiscountFactor spread ttm Continuous)
+            | Continuous -> __.DiscountFactor(ttm)* (YieldCurveHelper.YieldToDiscountFactor spread ttm Continuous)
             | _ as x -> YieldCurveHelper.YieldToDiscountFactor (__.Yield(ttm) + spread) ttm x
 
         /// Calculates the forward rate between two times to maturities

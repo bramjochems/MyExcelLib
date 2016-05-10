@@ -6,6 +6,7 @@
 module public Misc =
     open ExcelDna.Integration
     open BJExcelLib.ExcelDna.IO
+    open BJExcelLib.Util.Extensions
 
     let private fwdfunc (t1 : float) y1 t2 y2 =
         (y2*t2-y1*t1)/(t2-t1)
@@ -45,7 +46,7 @@ module public Misc =
                                 [<ExcelArgument(Name="Rate",Description ="Interest reate to use")>] r : obj,
                                 [<ExcelArgument(Name="Frequency",Description="The number of interest payments per year. Optional, default = 0, which is interpreted as continuous compounding")>] f : obj) =
 
-        let ttm, rate, freq = t |> validateFloat, r |> validateFloat, f |> validateFloat |> FSharpx.Option.getOrElse 0. |> max 0.
+        let ttm, rate, freq = t |> validateFloat, r |> validateFloat, f |> validateFloat |> Option.getOrElse 0. |> max 0.
         if ttm.IsSome && rate.IsSome then
             if freq = 0. then exp(-rate.Value * ttm.Value) |> Some
             else (1. + rate.Value/freq)**(-freq*ttm.Value) |> Some

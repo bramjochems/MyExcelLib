@@ -10,7 +10,7 @@ type IYieldCurve =
     abstract member ReferenceDate : System.DateTime with get
     abstract member CompoundingFrequency: CompoundingFrequency with get
     abstract member DefiningPoints : YieldCurvePoint list with get
-    abstract member Discount : timeToMaturity:float -> float
+    abstract member DiscountFactor : timeToMaturity:float -> float
     abstract member Yield : timeToMaturity:float -> float
     abstract member ParallelShock : isAbsoluteShock: bool -> shock:float -> IYieldCurve
     abstract member Shock : shockCurve:IYieldCurve -> IYieldCurve

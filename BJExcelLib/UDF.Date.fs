@@ -6,6 +6,7 @@ module public Date =
     open BJExcelLib.ExcelDna.IO
     open BJExcelLib.Finance
     open BJExcelLib.Finance.Date
+    open BJExcelLib.Util.Extensions
 
     /// Non-volatile version of Excel's today() function
     [<ExcelFunction(Name="Today_Nonvolatile", Description="Today's date as a non-volatile function",Category="BJFinanceLib.Date", IsThreadSafe = true,IsExceptionSafe=true)>]
@@ -24,7 +25,7 @@ module public Date =
     let public datefromtenor    ([<ExcelArgument(Name="Tenor",Description = "The tenor to apply to the startdate, e.g. '4y3d'")>] tenor : obj,
                                  [<ExcelArgument(Name="StartDate",Description = "Startdate. Optional, default = today")>] startdate : obj) =
     
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse (System.DateTime.Today)
+        let startdate = startdate |> validateDate |> Option.getOrElse (System.DateTime.Today)
         tenor   |> validateString 
                 |> Option.bind BJExcelLib.Finance.Date.tenor
                 |> Option.bind (fun t -> (offset t startdate) |> Some)
@@ -34,7 +35,7 @@ module public Date =
     [<ExcelFunction(Name="TTM",Description="Calculations the yearfraction between two dates assuming an Act/Act ISDA convention", Category="BJExcelLib.Date",IsThreadSafe=true,IsExceptionSafe=true)>]
     let public TTM( [<ExcelArgument(Name="Enddate",Description = "Enddate of the ttm calculation (inclusive)")>] enddate : obj,
                     [<ExcelArgument(Name="StartDate",Description = "Startdate of the ttm calculation (inclusive). Optional, default = today")>] startdate : obj) =    
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse System.DateTime.Today
+        let startdate = startdate |> validateDate |> Option.getOrElse System.DateTime.Today
         enddate |> validateDate
                 |> Option.map (fun e -> yearfrac Actual_Actual_ISDA startdate e)
                 |> valueToExcel
@@ -43,7 +44,7 @@ module public Date =
     [<ExcelFunction(Name="TTM_30_360",Description="Calculations the yearfraction between two dates assuming an 30/360 ISDA convention", Category="BJExcelLib.Date",IsThreadSafe=true,IsExceptionSafe=true)>]
     let public TTM30360([<ExcelArgument(Name="Enddate",Description = "Enddate of the ttm calculation (inclusive)")>] enddate : obj,
                         [<ExcelArgument(Name="StartDate",Description = "Startdate of the ttm calculation (inclusive). Optional, default = today")>] startdate : obj) =    
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse System.DateTime.Today
+        let startdate = startdate |> validateDate |> Option.getOrElse System.DateTime.Today
         enddate |> validateDate
                 |> Option.map (fun e -> yearfrac Thirty_360_ISDA startdate e)
                 |> valueToExcel
@@ -52,7 +53,7 @@ module public Date =
     [<ExcelFunction(Name="TTM_Act_360",Description="Calculations the yearfraction between two dates assuming an Act/360 convention", Category="BJExcelLib.Date",IsThreadSafe=true,IsExceptionSafe=true)>]
     let public TTMAct360([<ExcelArgument(Name="Enddate",Description = "Enddate of the ttm calculation (inclusive)")>] enddate : obj,
                          [<ExcelArgument(Name="StartDate",Description = "Startdate of the ttm calculation (inclusive). Optional, default = today")>] startdate : obj) =    
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse System.DateTime.Today
+        let startdate = startdate |> validateDate |> Option.getOrElse System.DateTime.Today
         enddate |> validateDate
                 |> Option.map (fun e -> yearfrac Actual_360 startdate e)
                 |> valueToExcel
@@ -61,7 +62,7 @@ module public Date =
     [<ExcelFunction(Name="TTM_Act_365",Description="Calculations the yearfraction between two dates assuming an Act/365.25 convention", Category="BJExcelLib.Date",IsThreadSafe=true,IsExceptionSafe=true)>]
     let public TTMAct365([<ExcelArgument(Name="Enddate",Description = "Enddate of the ttm calculation (inclusive)")>] enddate : obj,
                          [<ExcelArgument(Name="StartDate",Description = "Startdate of the ttm calculation (inclusive). Optional, default = today")>] startdate : obj) =    
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse System.DateTime.Today
+        let startdate = startdate |> validateDate |> Option.getOrElse System.DateTime.Today
         enddate |> validateDate
                 |> Option.map (fun e -> yearfrac Actual_365 startdate e)
                 |> valueToExcel
@@ -70,7 +71,7 @@ module public Date =
     [<ExcelFunction(Name="TTM_Act_365.25",Description="Calculations the yearfraction between two dates assuming an Act/365.25 convention", Category="BJExcelLib.Date",IsThreadSafe=true,IsExceptionSafe=true)>]
     let public TTMAct365qrt([<ExcelArgument(Name="Enddate",Description = "Enddate of the ttm calculation (inclusive)")>] enddate : obj,
                             [<ExcelArgument(Name="StartDate",Description = "Startdate of the ttm calculation (inclusive). Optional, default = today")>] startdate : obj) =    
-        let startdate = startdate |> validateDate |> FSharpx.Option.getOrElse System.DateTime.Today
+        let startdate = startdate |> validateDate |> Option.getOrElse System.DateTime.Today
         enddate |> validateDate
                 |> Option.map (fun e -> yearfrac Actual_365qrt startdate e)
                 |> valueToExcel

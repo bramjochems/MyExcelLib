@@ -68,7 +68,7 @@ module public IO =
     /// None values get transformed to an excelerror.
     let public valueToExcel value =
         value |> Option.map box
-              |> FSharpx.Option.getOrElse (ExcelError.ExcelErrorNA :> obj)
+              |> Option.getOrElse (ExcelError.ExcelErrorNA :> obj)
 
     /// Transforms a 1D array into a sequence
     /// Inputs: validationfunction validates the elements of the array elementswise after they've been checked for error/missing values
@@ -81,7 +81,7 @@ module public IO =
     ///         defaultvalue is the default value to replace missing values with
     ///         arr is the array to transform
     let array1DAsSequenceWithDefault validationfunction defaultvalue =
-        Seq.map (wrapErrorValues >> Option.bind validationfunction >> (FSharpx.Option.getOrElse defaultvalue))
+        Seq.map (wrapErrorValues >> Option.bind validationfunction >> (Option.getOrElse defaultvalue))
 
     /// Transforms a 1D array into a List
     /// Inputs: validationfunction validates the elements of the array elementswise after they've been checked for error/missing values
@@ -111,7 +111,7 @@ module public IO =
     let array1DAsArrayWithDefault validationfunction defaultvalue =
         Array.map ( wrapErrorValues >>
                     Option.bind validationfunction >>
-                    (FSharpx.Option.getOrElse defaultvalue))
+                    (Option.getOrElse defaultvalue))
 
     /// Transforms a 2D array into an Array2D with typed (casted) elements and the data elements in the various rows.
     /// Inputs: roworiented defines whether the array is interpreted as having rows contain different data elements. If false, the array gets transposed

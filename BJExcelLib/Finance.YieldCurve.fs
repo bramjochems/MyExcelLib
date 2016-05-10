@@ -11,7 +11,7 @@ module public YieldCurveHelper =
     let YieldToDiscountFactor (yield_:float) timeToMaturity compoundingFrequency =
         match compoundingFrequency with
         | TimesPerYear(n) when n < 1 -> raise(ArgumentOutOfRangeException("Invalid compounding frequency argument in YieldToDiscountFactor"))
-        | Continuous -> Math.Exp(yield_ * timeToMaturity)
+        | Continuous -> Math.Exp(-yield_ * timeToMaturity)
         | TimesPerYear(n)->
             let n = (float) n
             Math.Pow(1. + yield_/n,-n*timeToMaturity)
@@ -52,7 +52,7 @@ type YieldCurve(definingPoints:seq<YieldCurvePoint>, referenceDate, dayCounter:D
     /// Default implementation of Yield method
     default __.Yield(timeToMaturity) =
         let iyc = (__ :> IYieldCurve)
-        YieldCurveHelper.DiscountFactorToYield (iyc.Discount(timeToMaturity)) timeToMaturity iyc.CompoundingFrequency
+        YieldCurveHelper.DiscountFactorToYield (iyc.DiscountFactor(timeToMaturity)) timeToMaturity iyc.CompoundingFrequency
 
     /// Implementation of the IYieldcurve interface
     interface IYieldCurve with
@@ -73,7 +73,7 @@ type YieldCurve(definingPoints:seq<YieldCurvePoint>, referenceDate, dayCounter:D
             with get() = definingPoints
 
         /// Return the discount factor for a given timeToMaturity
-        member __.Discount(timeToMaturity) =
+        member __.DiscountFactor(timeToMaturity) =
             match YieldCurveHelper.validateTTM timeToMaturity with
             | true -> __.InternalDiscountFactorCalculation timeToMaturity
             | false -> 1.
@@ -101,7 +101,7 @@ type YieldCurve(definingPoints:seq<YieldCurvePoint>, referenceDate, dayCounter:D
             new ShockedYieldCurve(__:>IYieldCurve,shockCurve) :> IYieldCurve
 
 /// Class for shocked yield curves which are sum objects of two yield curves
-and ShockedYieldCurve(baseCurve,shockCurve) as this =
+and ShockedYieldCurve(baseCurve,shockCurve) =
     inherit YieldCurve(Seq.empty, baseCurve.ReferenceDate, baseCurve.Daycounter, baseCurve.CompoundingFrequency)
 
     do if isNull baseCurve then raise(NullReferenceException("Null base curve provided to ShockedYieldCurve"))
@@ -111,7 +111,7 @@ and ShockedYieldCurve(baseCurve,shockCurve) as this =
 
     /// Implement the calculation for a discount factor for shocked curve. All other functionality follows from the base class YieldCurve
     override __.InternalDiscountFactorCalculation(validatedTime) =
-        _baseCurve.Discount(validatedTime)*_shockCurve.Discount(validatedTime)
+        _baseCurve.DiscountFactor(validatedTime)*_shockCurve.DiscountFactor(validatedTime)
 
 /// Yield curve that interpolates linear in spot rates
 and YieldCurveLinearSpot(definingPoints:seq<YieldCurvePoint>, referenceDate, dayCounter, ?compoundingFrequency ) as this =

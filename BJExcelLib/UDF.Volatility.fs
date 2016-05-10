@@ -5,6 +5,7 @@ module public Volatility =
     open ExcelDna.Integration
     open BJExcelLib.ExcelDna.IO
     open BJExcelLib.Finance
+    open BJExcelLib.Util.Extensions
 
     let private INTERPOLATOR_TAG = "VolInterpolator"
 
@@ -98,14 +99,14 @@ module public Volatility =
                       [<ExcelArgument(Name="VegaWeighted",Description="Boolean that determines whether calibration occurs on a vega-weighted basis (if true), or equally weighted basis (if false). Default=False")>] vegaWeighted : obj) =
         let strikes = array1DAsArray validateFloat strikes
         let vols = array1DAsArray validateFloat vols
-        let ttm = validateFloat ttm |> FSharpx.Option.getOrElse -1. 
-        let fwd = validateFloat fwd |> FSharpx.Option.getOrElse 1.
-        let vegaWeighted = validateBool vegaWeighted |> FSharpx.Option.getOrElse false
+        let ttm = validateFloat ttm |> Option.getOrElse -1. 
+        let fwd = validateFloat fwd |> Option.getOrElse 1.
+        let vegaWeighted = validateBool vegaWeighted |> Option.getOrElse false
         if Array.length strikes = Array.length vols && ttm > 0. && fwd > 0. then
             let weightfunc = 
                 if vegaWeighted then
-                    let maxvega = BJExcelLib.Finance.Blackscholes.vega false (Call) fwd fwd ttm 0. 0. 0.30 |> FSharpx.Option.getOrElse 1. // Not exactly equal to maxvega, but close enough for scaling
-                    fun (strike,vol) -> BJExcelLib.Finance.Blackscholes.vega false (Call) fwd strike ttm 0. 0. vol |> FSharpx.Option.getOrElse 0. |> fun v -> v/maxvega
+                    let maxvega = BJExcelLib.Finance.Blackscholes.vega false (Call) fwd fwd ttm 0. 0. 0.30 |> Option.getOrElse 1. // Not exactly equal to maxvega, but close enough for scaling
+                    fun (strike,vol) -> BJExcelLib.Finance.Blackscholes.vega false (Call) fwd strike ttm 0. 0. vol |> Option.getOrElse 0. |> fun v -> v/maxvega
                 else fun (strike,vol) -> 1.
             Array.zip strikes vols  |> Array.filter (fun (s,v) -> s.IsSome && v.IsSome)
                                     |> Array.map (fun (s,v) -> s.Value, v.Value)

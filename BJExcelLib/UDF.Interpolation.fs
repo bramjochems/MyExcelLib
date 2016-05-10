@@ -11,6 +11,7 @@ module public Interpolation =
     open BJExcelLib.ExcelDna.Cache
     open BJExcelLib.Math.Interpolation
     open BJExcelLib.Math.Interpolation2D
+    open BJExcelLib.Util.Extensions
 
     let private INTERPOLATOR_TAG = "BJ1DInterpolator"
     let private INTERPOLATOR2D_TAG = "BJ2DInterpolator"
@@ -137,8 +138,8 @@ module public Interpolation =
                             [<ExcelArgument(Name="dLeft",Description = "The derivative at the leftmost x-point")>] left : obj,
                             [<ExcelArgument(Name="dRight",Description = "The derivative at the rightmost x-point")>] right : obj,
                             [<ExcelArgument(Name="Xnew",Description = "New x-values to interpolate at")>] xnew : obj []) =
-        let l = validateFloat left |> FSharpx.Option.getOrElse 0.
-        let r = validateFloat right |> FSharpx.Option.getOrElse 0.
+        let l = validateFloat left |> Option.getOrElse 0.
+        let r = validateFloat right |> Option.getOrElse 0.
         ipcalc (interpolatorClampedSpline l r) xold yold xnew
 
     /// Builds a natural spline interpolator object in the cache
@@ -148,8 +149,8 @@ module public Interpolation =
                                 [<ExcelArgument(Name="Yold",Description = "Given input y-values")>] yold : obj [],
                                 [<ExcelArgument(Name="dLeft",Description = "The derivative at the leftmost x-point")>] left : obj,
                                 [<ExcelArgument(Name="dRight",Description = "The derivative at the rightmost x-point")>] right : obj) =
-        let l = validateFloat left |> FSharpx.Option.getOrElse 0.
-        let r = validateFloat right |> FSharpx.Option.getOrElse 0.
+        let l = validateFloat left |> Option.getOrElse 0.
+        let r = validateFloat right |> Option.getOrElse 0.
         ipbuild (interpolatorClampedSpline l r) xold yold
 
     /// Performs linear gitting on input data                            
@@ -172,7 +173,7 @@ module public Interpolation =
                             [<ExcelArgument(Name="Yold",Description = "Given input y-values")>] yold : obj [],
                             [<ExcelArgument(Name="Degree",Description = "Maximum degree of the fitting polynomial. Optional, default = 1")>] degree : obj,
                             [<ExcelArgument(Name="Xnew",Description = "New x-values to interpolate at")>] xnew : obj []) =
-        let degree = degree |> validateInt |> FSharpx.Option.getOrElse 1
+        let degree = degree |> validateInt |> Option.getOrElse 1
         ipcalc (fitPolynomial degree) xold yold xnew
 
     /// Builds a piecewise contant interpolator object in the cache
@@ -181,7 +182,7 @@ module public Interpolation =
     let public udfbldpolyft([<ExcelArgument(Name="Xold",Description = "Given input x-values")>] xold : obj [],
                             [<ExcelArgument(Name="Yold",Description = "Given input y-values")>] yold : obj [],
                             [<ExcelArgument(Name="Degree",Description = "Maximum degree of the fitting polynomial")>] degree : obj) =
-        let degree = degree |> validateInt |> FSharpx.Option.getOrElse 1
+        let degree = degree |> validateInt |> Option.getOrElse 1
         ipbuild (fitPolynomial degree) xold yold
 
     /// Performs interpolation on the input data using a Fritsch-Butland spline                          
