@@ -53,6 +53,7 @@
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
   <ItemGroup>
     <Compile Include="Util.Extensions.fs" />
+    <Compile Include="Util.Misc.fs" />
     <Compile Include="ExcelDna.IO.fs" />
     <Compile Include="ExcelDna.Cache.fs" />
     <Compile Include="Math.Constants.fs" />
@@ -64,6 +65,10 @@
     <Compile Include="Finance.SVI.fs" />
     <Compile Include="Finance.Blackscholes.fs" />
     <Compile Include="Finance.JuZhong.fs" />
+    <Compile Include="Finance.YieldCurvePoint.fs" />
+    <Compile Include="Finance.IYieldCurve.fs" />
+    <Compile Include="Finance.YieldCurve.fs" />
+    <Compile Include="Finance.YieldCurveExtensions.fs" />
     <Compile Include="UDF.Date.fs" />
     <Compile Include="UDF.Interpolation.fs" />
     <Compile Include="UDF.Volatility.fs" />

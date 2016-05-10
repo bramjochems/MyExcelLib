@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UDFs", "UDFs", "{C34891EC-85D9-4CCE-880D-9F81F84677C3}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,6 +30,13 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BJExcelLib", "BJExcelLib\BJ
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BJExcelLibTests", "BJExcelLibTests\BJExcelLibTests.fsproj", "{1F3EDE6E-7D84-45BD-9B0C-00198760A714}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YieldCurves", "YieldCurves", "{786824DF-AEAA-42B9-978D-B7F91BB7984F}"
+	ProjectSection(SolutionItems) = preProject
+		BJExcelLib\Finance.IYieldCurve.fs = BJExcelLib\Finance.IYieldCurve.fs
+		BJExcelLib\Finance.YieldCurve.fs = BJExcelLib\Finance.YieldCurve.fs
+		BJExcelLib\Finance.YieldCurvePoint.fs = BJExcelLib\Finance.YieldCurvePoint.fs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +54,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{786824DF-AEAA-42B9-978D-B7F91BB7984F} = {733C851A-70E4-44BF-96D5-F361562FA094}
 	EndGlobalSection
 EndGlobal
